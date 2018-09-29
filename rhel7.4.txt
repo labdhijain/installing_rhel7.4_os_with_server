@@ -1,0 +1,29 @@
+senerio :
+1) we have one bootable pen drive
+2) approx 10 system without os
+3)only one have runing os
+
+# and game is how to install  os in same time in all system
+
+# 1=> check lan is connected with same system.
+# 2=> resources or data of bootable pendrive is kept in ftp or  apache
+# 3=> boot with pendrive and 
+      after getting screen crtl+e
+      in second line 
+      write
+      => linux repo=ftp://ip/pub/rhel75
+      => ctrl+X
+      installation started 
+      select minimal installation 
+      after installation use startx to get gui
+      
+# how to set default gui
+      
+      yum grouplist
+      =>  vim /etc/yum.repos.d/adhoc.repo (repo setup)
+      =>  yum grouplist
+      =>  yum groupinstall "Server with GUI"
+      =>  systemctl set-default graphical.target
+      =>  systemctl isolate default.target
+
+#happy ending:
